@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Comment</title>
+</head>
+<body>
+     <h1>please add your comment</h1>
+     <div id="comment-container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque inventore obcaecati, eos vero amet praesentium harum esse natus aspernatur dolore temporibus doloribus, laudantium sit perspiciatis eveniet deserunt ducimus sequi nisi.</p>
+        <p>Illo modi quos atque laborum sint et corrupti, incidunt debitis iste numquam consectetur ad voluptatem odio totam, est dignissimos nemo iusto necessitatibus amet a ab illum sapiente nihil cumque? Saepe.</p>
+        <p>Hic odio debitis blanditiis numquam, et quod quam? Alias in repellat possimus nemo animi id ab aperiam minus magnam, odit, ipsa recusandae facilis vitae ex est iure impedit voluptas rerum.</p>
+     </div>
+     <div>
+        <textarea name="" id="new-comment" cols="30" rows="1"></textarea>
+        <br>
+        <button id="button-post">
+            post
+        </button>
+     </div>
+  <script>
+    //stap 1 : add even listener
+
+    document.getElementById('button-post').addEventListener('click',function(){
+     // stap 2 : get the comment inside the text area 
+         const  commentBox =  document.getElementById('new-comment');
+         const newComment =  commentBox.value;
+         console.log(newComment);
+         // stap 3:  set the comment inside the comment container 
+         // 1.get the comment container 
+         //2.crite a new alliment
+         //3.set the text
+         //4.add the p  tag using appendchild 
+
+         const commentContainer =  document.getElementById('comment-container');
+            const  p=  document.createElement('p');
+            p.innerText = newComment;
+            commentContainer.appendChild(p); 
+            // stap : 5 clear the text area 
+            commentBox.value = "";
+    });
+  </script>
+</body>  
+</html>
